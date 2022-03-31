@@ -10,4 +10,5 @@
     <string name="thirtyInitLife">30</string>
     <string name="fortyInitLife">40</string>
     <string name="startTextOnButton">START</string>
+    <string name="default_life">20</string>
 </resources>
