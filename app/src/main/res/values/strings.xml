@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">My Life Total</string>
+    <string name="homescreen_text">My Life Total</string>
+    <string name="num_of_players">Number of players:</string>
+    <string name="initLife">Initial amount of life:</string>
+    <string name="twoPlayers">2</string>
+    <string name="threePlayers">3</string>
+    <string name="fourPlayers">4</string>
+    <string name="twentyInitLife">20</string>
+    <string name="thirtyInitLife">30</string>
+    <string name="fortyInitLife">40</string>
+    <string name="startTextOnButton">START</string>
 </resources>

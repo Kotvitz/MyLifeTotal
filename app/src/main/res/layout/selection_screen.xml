@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#007FFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/homescreenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="148dp"
+        android:text="@string/homescreen_text"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/numOfPlayersText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:text="@string/num_of_players"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homescreenText" />
+
+    <RadioButton
+        android:id="@+id/twoPlayersRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/twoPlayers"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numOfPlayersText" />
+
+    <RadioButton
+        android:id="@+id/threePlayersRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/threePlayers"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/twoPlayersRadioButton"
+        app:layout_constraintStart_toEndOf="@+id/twoPlayersRadioButton" />
+
+    <RadioButton
+        android:id="@+id/fourPlayersRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/fourPlayers"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/threePlayersRadioButton"
+        app:layout_constraintStart_toEndOf="@+id/threePlayersRadioButton" />
+
+    <TextView
+        android:id="@+id/initLifeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/initLife"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/fourPlayersRadioButton"
+        app:layout_constraintTop_toBottomOf="@+id/twoPlayersRadioButton" />
+
+    <RadioButton
+        android:id="@+id/twentyInitLifeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="21dp"
+        android:text="@string/twentyInitLife"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/thirtyInitLifeButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/initLifeText" />
+
+    <RadioButton
+        android:id="@+id/thirtyInitLifeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="19dp"
+        android:text="@string/thirtyInitLife"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/fortyInitLifeButton"
+        app:layout_constraintStart_toEndOf="@+id/twentyInitLifeButton"
+        app:layout_constraintTop_toBottomOf="@+id/initLifeText" />
+
+    <RadioButton
+        android:id="@+id/fortyInitLifeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/fortyInitLife"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/thirtyInitLifeButton"
+        app:layout_constraintTop_toBottomOf="@+id/initLifeText" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:text="@string/startTextOnButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twentyInitLifeButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
