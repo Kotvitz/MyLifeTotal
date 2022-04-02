@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_corners_black"/>
+    <View
+        android:id="@+id/center"
+        android:layout_height="70dp"
+        android:layout_width="70dp"
+        android:background="@android:color/transparent"
+        android:layout_centerInParent="true" />
+    <ImageView android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/center"
+        android:src="@drawable/ic_baseline_players_2_24"/>
+    <Button
+        android:id="@+id/two_players"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/center"
+        android:background="@android:color/transparent" />
+    <ImageView android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/center"
+        android:src="@drawable/ic_baseline_players_3_24"/>
+    <Button
+        android:id="@+id/three_players"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/center"
+        android:background="@android:color/transparent" />
+    <ImageView android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/three_players"
+        android:src="@drawable/ic_baseline_players_4_24"/>
+    <Button
+        android:id="@+id/four_players"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/three_players"
+        android:background="@android:color/transparent" />
+</RelativeLayout>

@@ -70,10 +70,13 @@ class GameActivity : AppCompatActivity() {
         val menuBar: RelativeLayout = view.findViewById(R.id.menu_bar)
         val lifeButton: Button = view.findViewById(R.id.life_button)
         val lifeBar: RelativeLayout = view.findViewById(R.id.life_bar)
+        val playersButton: Button = view.findViewById(R.id.players_button)
+        val playersBar: RelativeLayout = view.findViewById(R.id.players_bar)
         menuButton.setOnClickListener {
             if (menuBar.visibility == View.VISIBLE) {
                 menuBar.visibility = View.GONE
                 lifeBar.visibility = View.GONE
+                playersBar.visibility = View.GONE
             } else
                 menuBar.visibility = View.VISIBLE
         }
@@ -116,6 +119,40 @@ class GameActivity : AppCompatActivity() {
             val intent = Intent(this, GameActivity::class.java)
             intent.putExtra(NUM_OF_PLAYERS, numOfPlayers)
             intent.putExtra(INITLIFE, 40)
+            onDestroy()
+            startActivity(intent)
+        }
+
+        playersButton.setOnClickListener {
+            if(playersBar.visibility == View.VISIBLE)
+                playersBar.visibility = View.GONE
+            else
+                playersBar.visibility = View.VISIBLE
+        }
+
+        val twoPlayersButton: Button = view.findViewById(R.id.two_players)
+        twoPlayersButton.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)
+            intent.putExtra(NUM_OF_PLAYERS, 2)
+            intent.putExtra(INITLIFE, life)
+            onDestroy()
+            startActivity(intent)
+        }
+
+        val threePlayersButton: Button = view.findViewById(R.id.three_players)
+        threePlayersButton.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)
+            intent.putExtra(NUM_OF_PLAYERS, 3)
+            intent.putExtra(INITLIFE, life)
+            onDestroy()
+            startActivity(intent)
+        }
+
+        val fourPlayersButton: Button = view.findViewById(R.id.four_players)
+        fourPlayersButton.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)
+            intent.putExtra(NUM_OF_PLAYERS, 4)
+            intent.putExtra(INITLIFE, life)
             onDestroy()
             startActivity(intent)
         }
