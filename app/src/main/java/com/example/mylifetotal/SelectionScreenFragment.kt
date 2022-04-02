@@ -11,10 +11,13 @@ import androidx.fragment.app.Fragment
 
 class SelectionScreenFragment : Fragment() {
     private val NUM_OF_PLAYERS = "NUM_OF_PLAYERS"
-    var numPlayers: Int = 0
-
     private val INITLIFE = "INITLIFE"
-    var lifeAmount: Int = 0
+
+    private val defaultNumOfPlayers = 3
+    private val defaultLife = 20
+
+    private var numPlayers = defaultNumOfPlayers
+    private var lifeAmount = defaultLife
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -13,11 +13,8 @@ class GameActivity : AppCompatActivity() {
     private val NUM_OF_PLAYERS = "NUM_OF_PLAYERS"
     private val INITLIFE = "INITLIFE"
 
-    private val defaultNumOfPlayers = 3
-    private val defaultLife = 20
-
-    private var life = defaultLife
-    private var numOfPlayers = defaultNumOfPlayers
+    private var life = 0
+    private var numOfPlayers = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +22,7 @@ class GameActivity : AppCompatActivity() {
 
         val extras = intent.extras
 
-        if(extras != null) {
+        if (extras != null) {
             numOfPlayers = extras.getInt(NUM_OF_PLAYERS)
             life = extras.getInt(INITLIFE)
         }
