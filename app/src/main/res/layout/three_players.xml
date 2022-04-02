@@ -10,14 +10,14 @@
         android:layout_centerInParent="true"/>
 
     <include android:id="@+id/player_one"
-        layout="@layout/flipped_player_layout"
+        layout="@layout/player_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toLeftOf="@id/center"
         android:layout_above="@+id/center"/>
 
     <include android:id="@+id/player_two"
-        layout="@layout/flipped_player_layout"
+        layout="@layout/player_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/center"
@@ -31,6 +31,10 @@
 
     <include android:id="@+id/menu_bar"
         layout="@layout/menu_bar"
+        android:visibility="gone"/>
+
+    <include android:id="@+id/life_bar"
+        layout="@layout/life_bar"
         android:visibility="gone"/>
 
     <include layout="@layout/menu_logo"

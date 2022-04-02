@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_corners_black"/>
+    <View
+        android:id="@+id/center"
+        android:layout_height="70dp"
+        android:layout_width="70dp"
+        android:background="@android:color/transparent"
+        android:layout_centerInParent="true" />
+    <TextView android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/center"
+        android:text="20"
+        android:textColor="@color/white"
+        android:textSize="28dp"/>
+    <Button
+        android:id="@+id/twenty_lives"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/center"
+        android:background="@android:color/transparent" />
+    <TextView android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/center"
+        android:text="30"
+        android:textColor="@color/white"
+        android:textSize="28dp"/>
+    <Button
+        android:id="@+id/thirty_lives"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/center"
+        android:background="@android:color/transparent" />
+    <TextView android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/thirty_lives"
+        android:text="40"
+        android:textColor="@color/white"
+        android:textSize="28dp"/>
+    <Button
+        android:id="@+id/fortyLives"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/thirty_lives"
+        android:background="@android:color/transparent" />
+</RelativeLayout>
