@@ -1,7 +1,9 @@
 package com.example.mylifetotal
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.RelativeLayout
@@ -15,6 +17,7 @@ class GameActivity : AppCompatActivity() {
 
     private var life = 0
     private var numOfPlayers = 0
+    private var colorIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,9 +53,26 @@ class GameActivity : AppCompatActivity() {
         lifetotal.text = (lifetotal.text.toString().toInt() - 1).toString()
     }
 
+    private fun changePlayerBackgroundColor(playerColor: View) {
+        colorIndex += 1
+
+        if(colorIndex > 5)
+            colorIndex = 1
+
+        when (colorIndex) {
+            1 -> playerColor.setBackgroundResource(R.drawable.rounded_corners_beige)
+            2 -> playerColor.setBackgroundResource(R.drawable.rounded_corners_gray)
+            3 -> playerColor.setBackgroundResource(R.drawable.rounded_corners_blue)
+            4 -> playerColor.setBackgroundResource(R.drawable.rounded_corners_green)
+            5 -> playerColor.setBackgroundResource(R.drawable.rounded_corners_red)
+        }
+    }
+
     fun setUpLayout(layout: RelativeLayout) {
         val playerLife: TextView = layout.findViewById(R.id.life_total)
         playerLife.text = life.toString()
+
+        val playerColor: View = layout.findViewById(R.id.player_color)
 
         val playerAdd: Button = layout.findViewById(R.id.add_life)
         playerAdd.setOnClickListener {
@@ -62,6 +82,11 @@ class GameActivity : AppCompatActivity() {
         val playerSubtract: Button = layout.findViewById(R.id.subtract_life)
         playerSubtract.setOnClickListener {
             subtractLifePoint(playerLife)
+        }
+
+        val brushButton: Button = layout.findViewById(R.id.brush_button)
+        brushButton.setOnClickListener {
+            changePlayerBackgroundColor(playerColor)
         }
     }
 

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
-        android:background="@drawable/rounded_corners"/>
+        android:background="@drawable/rounded_corners_blue"/>
 
     <ImageView
         android:layout_width="38dp"
@@ -25,6 +25,12 @@
         android:layout_centerVertical="true"
         android:layout_alignRight="@+id/player_color"/>
 
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@drawable/ic_baseline_brush_24"
+        android:layout_marginTop="10dp"
+        android:layout_alignRight="@id/player_color"/>
     <TextView
         android:id="@+id/life_total"
         android:layout_width="wrap_content"
@@ -47,5 +53,11 @@
         android:layout_height="match_parent"
         android:layout_toLeftOf="@+id/life_total"
         android:background="@android:color/transparent"/>
-
+    <Button
+        android:id="@+id/brush_button"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignRight="@id/player_color"
+        android:background="@android:color/transparent"/>
 </RelativeLayout>
