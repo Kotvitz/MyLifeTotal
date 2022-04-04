@@ -1,6 +1,7 @@
 package com.example.mylifetotal
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment
 class SelectionScreenFragment : Fragment() {
     private val NUM_OF_PLAYERS = "NUM_OF_PLAYERS"
     private val INITLIFE = "INITLIFE"
+    private val WEBPAGE = "http://www.google.com"
 
     private val defaultNumOfPlayers = 3
     private val defaultLife = 20
@@ -73,6 +75,11 @@ class SelectionScreenFragment : Fragment() {
             startPlaying(numPlayers, lifeAmount)
         }
 
+        val aboutUs = view.findViewById<Button>(R.id.about_us_button)
+        aboutUs.setOnClickListener {
+            openWebpage(WEBPAGE)
+        }
+
         return view
     }
 
@@ -86,5 +93,10 @@ class SelectionScreenFragment : Fragment() {
         intent.putExtra(NUM_OF_PLAYERS, numPlayers)
         intent.putExtra(INITLIFE, lifeAmount)
         startActivity(intent)
+    }
+
+    private fun openWebpage(uriString: String) {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uriString))
+        startActivity(browserIntent)
     }
 }
