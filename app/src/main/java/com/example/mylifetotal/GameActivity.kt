@@ -2,10 +2,13 @@ package com.example.mylifetotal
 
 import android.content.Intent
 import android.graphics.Color
+import android.media.AudioManager
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +21,9 @@ class GameActivity : AppCompatActivity() {
     private var life = 0
     private var numOfPlayers = 0
     private var colorIndex = 0
+    private var index = 0
+
+    private lateinit var mp: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +40,8 @@ class GameActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
 
         var fragment : Fragment = SelectionScreenFragment()
+
+        mp = MediaPlayer.create(applicationContext, R.raw.click)
 
         when(numOfPlayers) {
             2 -> fragment = TwoPlayers()
@@ -68,6 +76,24 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
+    private fun manageSound(button: ImageButton) {
+        val audioManager: AudioManager = getSystemService(AUDIO_SERVICE) as AudioManager
+
+        index += 1
+
+        if(index > 2)
+            index = 1
+
+        if(index == 1) {
+            audioManager.setStreamMute(AudioManager.STREAM_MUSIC, true)
+            button.setBackgroundResource(R.drawable.ic_baseline_volume_off_24)
+        } else if(index == 2) {
+            audioManager.setStreamMute(AudioManager.STREAM_MUSIC, false)
+            button.setBackgroundResource(R.drawable.ic_baseline_volume_up_24)
+            mp.start()
+        }
+    }
+
     fun setUpLayout(layout: RelativeLayout) {
         val playerLife: TextView = layout.findViewById(R.id.life_total)
         playerLife.text = life.toString()
@@ -77,16 +103,19 @@ class GameActivity : AppCompatActivity() {
         val playerAdd: Button = layout.findViewById(R.id.add_life)
         playerAdd.setOnClickListener {
             addLifePoint(playerLife)
+            mp.start()
         }
 
         val playerSubtract: Button = layout.findViewById(R.id.subtract_life)
         playerSubtract.setOnClickListener {
             subtractLifePoint(playerLife)
+            mp.start()
         }
 
         val brushButton: Button = layout.findViewById(R.id.brush_button)
         brushButton.setOnClickListener {
             changePlayerBackgroundColor(playerColor)
+            mp.start()
         }
     }
 
@@ -97,6 +126,7 @@ class GameActivity : AppCompatActivity() {
         val lifeBar: RelativeLayout = view.findViewById(R.id.life_bar)
         val playersButton: Button = view.findViewById(R.id.players_button)
         val playersBar: RelativeLayout = view.findViewById(R.id.players_bar)
+        val soundButton: ImageButton = view.findViewById(R.id.soundButton)
         menuButton.setOnClickListener {
             if (menuBar.visibility == View.VISIBLE) {
                 menuBar.visibility = View.GONE
@@ -104,6 +134,7 @@ class GameActivity : AppCompatActivity() {
                 playersBar.visibility = View.GONE
             } else
                 menuBar.visibility = View.VISIBLE
+            mp.start()
         }
 
         val resetButton: Button = view.findViewById(R.id.reset_button)
@@ -111,6 +142,7 @@ class GameActivity : AppCompatActivity() {
             val intent = Intent(this, GameActivity::class.java)
             intent.putExtra(NUM_OF_PLAYERS, numOfPlayers)
             intent.putExtra(INITLIFE, life)
+            mp.start()
             startActivity(intent)
         }
 
@@ -119,6 +151,7 @@ class GameActivity : AppCompatActivity() {
                 lifeBar.visibility = View.GONE
             else
                 lifeBar.visibility = View.VISIBLE
+            mp.start()
         }
 
         val twentyLivesButton: Button = view.findViewById(R.id.twenty_lives)
@@ -126,6 +159,7 @@ class GameActivity : AppCompatActivity() {
             val intent = Intent(this, GameActivity::class.java)
             intent.putExtra(NUM_OF_PLAYERS, numOfPlayers)
             intent.putExtra(INITLIFE, 20)
+            mp.start()
             onDestroy()
             startActivity(intent)
         }
@@ -135,6 +169,7 @@ class GameActivity : AppCompatActivity() {
             val intent = Intent(this, GameActivity::class.java)
             intent.putExtra(NUM_OF_PLAYERS, numOfPlayers)
             intent.putExtra(INITLIFE, 30)
+            mp.start()
             onDestroy()
             startActivity(intent)
         }
@@ -144,6 +179,7 @@ class GameActivity : AppCompatActivity() {
             val intent = Intent(this, GameActivity::class.java)
             intent.putExtra(NUM_OF_PLAYERS, numOfPlayers)
             intent.putExtra(INITLIFE, 40)
+            mp.start()
             onDestroy()
             startActivity(intent)
         }
@@ -153,11 +189,13 @@ class GameActivity : AppCompatActivity() {
                 playersBar.visibility = View.GONE
             else
                 playersBar.visibility = View.VISIBLE
+            mp.start()
         }
 
         val twoPlayersButton: Button = view.findViewById(R.id.two_players)
         twoPlayersButton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
+            mp.start()
             intent.putExtra(NUM_OF_PLAYERS, 2)
             intent.putExtra(INITLIFE, life)
             onDestroy()
@@ -167,6 +205,7 @@ class GameActivity : AppCompatActivity() {
         val threePlayersButton: Button = view.findViewById(R.id.three_players)
         threePlayersButton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
+            mp.start()
             intent.putExtra(NUM_OF_PLAYERS, 3)
             intent.putExtra(INITLIFE, life)
             onDestroy()
@@ -176,10 +215,15 @@ class GameActivity : AppCompatActivity() {
         val fourPlayersButton: Button = view.findViewById(R.id.four_players)
         fourPlayersButton.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
+            mp.start()
             intent.putExtra(NUM_OF_PLAYERS, 4)
             intent.putExtra(INITLIFE, life)
             onDestroy()
             startActivity(intent)
+        }
+
+        soundButton.setOnClickListener {
+            manageSound(soundButton)
         }
     }
 }

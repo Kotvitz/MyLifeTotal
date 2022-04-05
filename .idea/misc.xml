@@ -13,6 +13,9 @@
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.123" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/ic_baseline_remove_circle_24.xml" value="0.1245" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/ic_baseline_settings_applications_24.xml" value="0.128" />
+        <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/ic_baseline_volume_off_24.xml" value="0.1245" />
+        <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/ic_baseline_volume_up_24.xml" value="0.1245" />
+        <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/red_circle.xml" value="0.1245" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/rounded_corners.xml" value="0.1245" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/rounded_corners_beige.xml" value="0.1245" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/drawable/rounded_corners_black.xml" value="0.123" />
@@ -26,11 +29,12 @@
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/color_picker.xml" value="0.136" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/flipped_player_layout.xml" value="0.11354166666666667" />
-        <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/four_players.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/four_players.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/homescreen.xml" value="0.152" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/life_bar.xml" value="0.2" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/menu_bar.xml" value="0.1" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/menu_logo.xml" value="0.1" />
+        <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/mute_and_unmute.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/player_layout.xml" value="0.128" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/players_bar.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/mihu1/OneDrive/Pulpit/my_projects/MyLifeTotal/app/src/main/res/layout/rotated_color_picker.xml" value="0.11354166666666667" />

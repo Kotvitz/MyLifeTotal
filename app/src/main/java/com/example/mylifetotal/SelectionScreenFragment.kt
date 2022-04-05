@@ -1,6 +1,7 @@
 package com.example.mylifetotal
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -40,44 +41,54 @@ class SelectionScreenFragment : Fragment() {
 
         val fortyLives: RadioButton = view.findViewById(R.id.fortyInitLifeButton)
 
+        val mp: MediaPlayer = MediaPlayer.create(context, R.raw.click)
+
         twoPlayers.setOnClickListener {
             numPlayers = 2
             uncheckOthers(threePlayers, fourPlayers)
+            mp.start()
         }
 
         threePlayers.setOnClickListener {
             numPlayers = 3
             uncheckOthers(twoPlayers, fourPlayers)
+            mp.start()
         }
 
         fourPlayers.setOnClickListener {
             numPlayers = 4
             uncheckOthers(twoPlayers, threePlayers)
+            mp.start()
         }
 
         twentyLives.setOnClickListener {
             lifeAmount = 20
             uncheckOthers(thirtyLives, fortyLives)
+            mp.start()
         }
 
         thirtyLives.setOnClickListener {
             lifeAmount = 30
             uncheckOthers(twentyLives, fortyLives)
+            mp.start()
         }
 
         fortyLives.setOnClickListener {
             lifeAmount = 40
             uncheckOthers(twentyLives, thirtyLives)
+            mp.start()
         }
 
         val startGame = view.findViewById<Button>(R.id.startButton)
         startGame.setOnClickListener {
             startPlaying(numPlayers, lifeAmount)
+            mp.start()
         }
 
         val aboutUs = view.findViewById<Button>(R.id.about_us_button)
         aboutUs.setOnClickListener {
             openWebpage(WEBPAGE)
+            mp.start()
         }
 
         return view
